@@ -1,0 +1,180 @@
+
+.background {
+    background: linear-gradient(to left, rgb(220, 179, 13), rgb(54, 130, 217));
+    /* background-color :rgb(11, 134, 11); */
+
+}
+
+/* .btn:hover {
+    background: linear-gradient(to left, rgb(119, 188, 40), rgb(5, 135, 55));
+} */
+
+/*Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    background-color: #ffffff;
+    color: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background: linear-gradient(to left, rgb(119, 188, 40), rgb(5, 135, 55));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Click Effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #bdc3c7, #ecf0f1, #bdc3c7);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn:active::before {
+    opacity: 1;
+}
+.navbar-brand {
+    text-shadow: 2px 2px 5px black;
+    font-size: x-large;
+    transform: scale(1);
+    transition: transform 0.3s;
+
+}
+
+.navbar-brand:hover {
+    cursor: grab;
+    transform: scale(1.1);
+}
+
+
+.nav-link {
+    /* text-decoration: none;
+    transition: text-decoration 0.1s; */
+    /* background: none;
+    transition: background 0.7s; */
+
+    transform: scale(1);
+    transition: transform 0.3s;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: text-shadow 0.3s;
+}
+
+* .nav-link:hover {
+
+    /* text-decoration: underline ; */
+    /* background: #e2e1e0; /* Change to desired color */
+    /* color: #000000;  */
+
+    transform: scale(1.1);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.banner-section {
+    position: relative;
+}
+
+.banner-btn {
+
+    /* border-radius: 4px; */
+    /* background-color: #f4511e; */
+    /* margin: 5px; */
+    /* color: #FFFFFF; */
+    /* padding: 20px; */
+    width: 200px;
+    position: absolute;
+    left: 30px;
+    padding: 10px;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
+.banner-btn:hover {
+    box-shadow: 0 0 10px black;
+    opacity: 1;
+    right: 0;
+    padding-right: .5px;
+
+}
+
+.banner-btn :after {
+    /* content: '\00bb'; */
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#banner-btn1 {
+    top: 20%;
+}
+
+#banner-btn2 {
+    top: 40%;
+}
+
+#banner-btn3 {
+    top: 60%;
+}
+
+.card-title {
+    height: 50px;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(207, 36, 36, 0.2), 0 6px 20px 0 rgba(117, 35, 35, 0.19);
+    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+
+
+
+/*Search Bar Styles */
+/* .form-control {
+
+}
+
+.form-control:focus {
+
+} */
+
+
+

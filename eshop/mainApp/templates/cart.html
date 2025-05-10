@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block title %}
+    <title> Eshop | Cart Page </title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <!-- Header for the table -->
+    <h5 class="background text-light text-center p-3 mt-2">Your Shopping Cart</h5>
+    
+    <!-- Table with responsive design and styling -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <!-- Table column headers -->
+                    <th scope="col">Product</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Increase Quantity</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Decrease Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Maincategory</th>
+                    <th scope="col">Subcategory</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Remove Item</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through items in the cart -->
+                {% for item in cart %}
+                <tr>
+                    <!-- Display product image with rounded corners -->
+                    <td><img src="{{ item.pic }}" width="80px" height="65px" class="rounded"></td>
+                    
+                    <!-- Display product information -->
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.color }}</td>
+                    <td>{{ item.size }}</td>
+                    <td>&#8377;{{ item.price }}</td>
+                    
+                    <!-- Increase quantity action with plus icon -->
+                    <td><a href="/update-cart/{{ i.pid }}/inc" class="btn btn-success"><i class="bi bi-plus"></i></a></td>
+                    
+                    <!-- Display product quantity -->
+                    <td>{{ item.qty }}</td>
+                    
+                    <!-- Decrease quantity action with minus icon -->
+                    <td><a href="/update-cart/{{ i.pid }}/dec" class="btn btn-warning"><i class="bi bi-dash"></i></a></td>
+                    
+                    <!-- Display total price for the product -->
+                    <td>&#8377;{{ item.total }}</td>
+                    
+                    <!-- Display product main category, subcategory, and brand -->
+                    <td>{{ item.maincategory }}</td>
+                    <td>{{ item.subcategory }}</td>
+                    <td>{{ item.brand }}</td>
+                    
+                    <!-- Remove item from the cart action with trash icon -->
+                    <td><a href="/delete-cart/{{ i.pid }}/" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cart summary section -->
+    <div class="row mt-4">
+        <div class="col-md-6 col-12"></div>
+        <div class="col-md-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Summary</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Total Amount</th>
+                            <td>&#8377;{{ total }}</td>
+                        </tr>
+                        <tr>
+                            <th>Shipping Amount</th>
+                            <td>&#8377;{{ shipping }}</td>
+                        </tr>
+                        <tr>
+                            <th>Final Amount</th>
+                            <td>&#8377;{{ total }}</td>
+                        </tr>
+                    </table>
+                    <a href="#" class="btn btn-primary">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

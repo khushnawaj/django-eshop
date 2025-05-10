@@ -1,0 +1,78 @@
+{% extends 'index.html'%}
+
+{% load static %}
+{% block title %}
+
+<title> Eshop | Profile </title>
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container-fluidnmt-2">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            {% if user.pic %}
+            <img src="{{ user.profile_picture.url }}" width="100%" height="500px" alt="Image not available">
+        {% else %}
+            <img src="{% static 'images/noimage1.png' %}" width="100%" height="590px" alt="Image not available">
+        {% endif %}
+        
+
+        </div>
+        <div class="col-md-6 col-12">
+            <h5 class="background text-light text-center p-1">Buyer Profile </h5>
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>Full Name</th>
+                    <td>{{user.name}}</td>
+                </tr>
+                <tr>
+                    <th>User Name</th>
+                    <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                    <th>Email Address</th>
+                    <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>{{user.phone}}</td>
+                </tr>
+                <tr>
+                    <th>House Number / Building Number</th>
+                    <td>{{user.addressline1}}</td>
+                </tr>
+                <tr>
+                    <th>Street Number/ Nearby</th>
+                    <td>{{user.addressline2}}</td>
+                </tr>
+                <tr>
+                    <th>Village or Locality</th>
+                    <td>{{user.addressline3}}</td>
+                </tr>
+                <tr>
+                    <th>Pin Code</th>
+                    <td>{{user.pin}}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{user.city}}</td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td>{{user.state}}</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"> <a href="/update-profile/"
+                            class="btn mybtn background text-light btn-sm w-100 ">Update Profile</a></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
